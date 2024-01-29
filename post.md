@@ -52,6 +52,8 @@ Welcome to our second lab! In this lab, we delve into the foundations of digital
 
 ## Conclusion
 
+In wrapping up this lab, we've delved into the intricate world of multiplexers, adder circuits, and digital design. From constructing a 2-to-1 mux with basic gates to utilizing a 74150 chip for a 4-to-1 mux, we've expanded our understanding of these fundamental components. Integrating Arduino into the mix not only showcased practical applications but also emphasized the dynamic nature of digital systems. As we delved into the design and implementation of a 1-bit adder circuit, the lab offered a holistic experience in digital circuitry. The challenges and successes encountered in building, testing, and troubleshooting these circuits provided invaluable insights into the nuances of hardware design. Overall, this lab has laid a solid foundation for comprehending multiplexers, adders, and the broader landscape of digital design in computer systems.
+
 
 
 

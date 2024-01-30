@@ -88,11 +88,15 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ### BUILDING A 4 TO 1 MUX
 
-- Below is a logical outline for the mux based on its Boolean expression:
+- Below is a logical outline for the mux based on its Boolean expression and its truth table:
 
-<img src="./assets/4-to-1_.png" alt="logic diagram of 2 to 1 mux"  />
+<img src="./assets/4-to-1_logic.png" alt="logic diagram of 2 to 1 mux"  />
 
+<img src="./assets/4-to-1_truth_table.png" alt="logic diagram of 2 to 1 mux"  />
 
+#### Get To Know The 74150 Chip:
+
+<img src="./assets/74150.png" alt="logic diagram of 2 to 1 mux"  />
 
 ## Testing
 

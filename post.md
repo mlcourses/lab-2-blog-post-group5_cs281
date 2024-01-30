@@ -24,11 +24,7 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - PB-503 breadboard prototyping station
 
-<img src="./assets/PB-503.png" alt="breadboard" height="450" width="600"/>
-
 - Arduino microcontroller kit
-
-<img src="./assets/Arduino_kit.png" alt="arduino_kit" height="450" width="600"/>
 
 - 7404 NOT gate IC
 
@@ -46,10 +42,10 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - Wires and connection tools
 
-<img src="./assets/wiring_kit.png" alt="arduino_kit" height="450" width="500"/>
-
 - Logic Probe
+
 - Arduino IDE software
+
 - Laptop or device for programming and connecting to the Arduino
 
 ## Project Steps
@@ -110,7 +106,13 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - Based on the logic circuit above and the structure of the 74150 chip, we can construct a wiring circuit:
 
+<img src="./assets/4-to-1_outline.png" alt="logic diagram of 2 to 1 mux"  />
 
+- Notice we are having 2 select lines C, D that are not connected to anything, which might cause incorrect outputs. Our solution is that we connect those pins with a Ground connection.
+
+- Here is the actual wiring circuit: 
+
+<img src="./assets/4-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
 
 ## Testing
 

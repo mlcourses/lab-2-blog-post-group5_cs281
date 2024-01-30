@@ -10,7 +10,7 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ## Lab Objectives
 
-1. Master Prototyping with PB-503 Breadboard.
+1. Understand how Multiplexers work.
 
 1. 2-to-1 Multiplexer construction.
 
@@ -90,7 +90,7 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - Below is a logical outline for the mux based on its Boolean expression:
 
-<img src="./assets/2-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
+<img src="./assets/4-to-1_.png" alt="logic diagram of 2 to 1 mux"  />
 
 
 

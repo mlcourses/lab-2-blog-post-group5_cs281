@@ -70,7 +70,24 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 <img src="./assets/2-to-1_outline.png" alt="arduino_kit" height="350" width="600"/>
 
-- 
+- In this first section of the lab, we are to build a 2 to 1 multiplexer using the 7408 AND, 7432 OR, and 7404 NOT gate. 
+
+- Before we delve into the wiring portion, we can draw a logical outline for the mux based on its Boolean expression:
+
+<img src="./assets/2-to-1_logic.png" alt="logic diagram of 2 to 1 mux"  />
+
+- When S (select line) is low (off), it selects line A for the output Y . When S is high, then the output Y copies input B
+
+<img src="./assets/2-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
+
+- Above is the wiring design of our 2 to 1 mux. with the 7408 AND gate IC top left, the 7404 OR gate IC on the bottom and the 7432 OR gate IC on the right. 
+
+- Notice that instead of using 2 separate 7408 AND gate IC, we decided to use just 1 IC and opt for 2 independent small AND gates in the IC, each with 2 inputs and 1 output to reduce the wiring complexity of our digital design. 
+
+- Relating to the logic outline of the mux, we use our PB-503 breadboard's S5 and S6 logical switches as our 2 data input lines, representing A and B while the 7404 NOT gate IC takes switch S1 as our select line. 
+
+### BUILDING A 4 TO 1 MUX
+
 
 
 ## Testing

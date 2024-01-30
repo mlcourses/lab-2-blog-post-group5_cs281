@@ -54,10 +54,23 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ## Project Steps
 
-### WHAT IS A MULTIPLEXER ?
+### UNDERSTANDING A MULTIPLEXER
+
+- A multiplexer, often called a "MUX", is a sophisticated selector crucial for managing signals in digital systems. Imagine it as a control panel with various input buttons (data inputs), and the multiplexer acts as the conductor, choosing which specific signal gets transmitted to the output.
+
+- Here's the key: input lines carry actual data signals, while the selector lines control which input takes the spotlight. This distinction between control and data is fundamental when it comes to Integrated Circuits (ICs).
+
+- Multiplexers vary in size, accommodating different numbers of inputs in powers of 2. The number of selector lines is log2(n), where n is the number of data inputs. So, for example, a mux with 2 inputs will have 1 select line and one with 4 inputs will have 2 select lines.
+
+- We name the mux by the number of data lines. So we can have common sizes such as 2-to-1, 4-to-1, 8-to-1, 16-to-1 muxes.
 
 ### BUILDING A 2 TO 1 MUX
 
+- Here is an outline of what a 2 to 1 mux might look like: 
+
+<img src="./assets/2-to-1_outline.png" alt="arduino_kit" height="350" width="600"/>
+
+- 
 
 
 ## Testing

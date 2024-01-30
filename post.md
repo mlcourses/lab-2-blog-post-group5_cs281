@@ -88,6 +88,10 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ### BUILDING A 4 TO 1 MUX
 
+- Below is a logical outline for the mux based on its Boolean expression:
+
+<img src="./assets/2-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
+
 
 
 ## Testing

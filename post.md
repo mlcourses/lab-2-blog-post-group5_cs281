@@ -88,15 +88,29 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ### BUILDING A 4 TO 1 MUX
 
+### 1. Getting To Know The 74150 Chip
+
+- In this 4 to 1 multiplexer circuit, we are only using the 74150 chip as the logic for our multiplexer. Below is the connection diagram and the function table of the chip:
+
+<img src="./assets/74150.png" alt="logic diagram of 2 to 1 mux"  />
+
+<img src="./assets/function_table.png" alt="logic diagram of 2 to 1 mux"  />
+
+- The `W out` pin is the output of the chip. 
+
+- The `strobe pin` is used to enable/disable the operation of the multiplexer. In this case, if it receives a Ground Voltage, then the multiplexer will be enabled or produce multiple outputs. If it receives a +5 Voltage, the multiplexer will be disabled, only outputting a +5 voltage.
+
+### 2. Wiring The Circuit
+
 - Below is a logical outline for the mux based on its Boolean expression and its truth table:
 
 <img src="./assets/4-to-1_logic.png" alt="logic diagram of 2 to 1 mux"  />
 
-<img src="./assets/4-to-1_truth_table.png" alt="logic diagram of 2 to 1 mux"  />
+<img src="./assets/4-to-1_truth_table.png" alt="logic diagram of 2 to 1 mux" />
 
-#### Get To Know The 74150 Chip:
+- Based on the logic circuit above and the structure of the 74150 chip, we can construct a wiring circuit:
 
-<img src="./assets/74150.png" alt="logic diagram of 2 to 1 mux"  />
+
 
 ## Testing
 

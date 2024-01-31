@@ -84,7 +84,7 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ### BUILDING A 4 TO 1 MUX
 
-### 1. Getting To Know The 74150 Chip
+#### 1. Getting To Know The 74150 Chip
 
 - In this 4 to 1 multiplexer circuit, we are only using the 74150 chip as the logic for our multiplexer. Below is the connection diagram and the function table of the chip:
 
@@ -94,9 +94,9 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - The `W out` pin is the output of the chip. 
 
-- The `strobe pin` is used to enable/disable the operation of the multiplexer. In this case, if it receives a Ground Voltage, then the multiplexer will be enabled or produce multiple outputs. If it receives a +5 Voltage, the multiplexer will be disabled, only outputting a +5 voltage.
+- The `strobe pin` is used to enable/disable the operation of the multiplexer. In this case, if it receives a Ground Voltage, then the multiplexer will be enabled or produce multiple outputs. If it receives a +5 Voltage, the multiplexer will be disabled, only outputting a +5 voltage regardless of what the select input lines are.
 
-### 2. Wiring The Circuit
+#### 2. Wiring The Circuit
 
 - Below is a logical outline for the mux based on its Boolean expression and its truth table:
 
@@ -113,6 +113,115 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 - Here is the actual wiring circuit: 
 
 <img src="./assets/4-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
+
+### AUTOMATE TESTING FOR A 4 TO 1 MUX WITH ARDUINO
+
+- In this part of the lab, we'll use an Arduino to test our 4-to-1 multiplexer instead of manual switches. The Arduino will control the inputs (data and control lines), read the mux output, and perform various tests to confirm the correct operation of both the mux and our circuit.
+
+#### 1. Programming The Arduino
+
+- Below is the program for our Arduino test:
+
+```C++
+const int S0[] = {0,0,1,1,0,0,1,1};
+const int S1[] = {0,0,0,0,1,1,1,1};
+const int A[] = {0,1,0,0,0,0,0,0};
+const int B[] = {0,0,0,1,0,0,0,0};
+const int C[] = {0,0,0,0,0,1,0,0};
+const int D[] = {0,0,0,0,0,0,0,1};
+//const int Y[] = {0,1,0,1,0,1,0,1};
+// You are probably using a 74150, so the outputs are reversed.
+// Use this Y instead:
+const int Y[] = {1,0,1,0,1,0,1,0};
+const int WAIT0 = 300;
+const int WAIT1 = 2000;
+int index = 0;
+int x; // for reading input
+void setup() {
+    // Serial Port setup for communication back to computer
+    Serial.begin(9600);
+    // data pins are outputs (for Arduino)
+    pinMode(10,OUTPUT); // A
+    pinMode(11,OUTPUT); // B
+    pinMode(12,OUTPUT); // C
+    pinMode(13,OUTPUT); // D
+    // select pins are outputs (for Arduino)
+    pinMode(8,OUTPUT); // S0
+
+    pinMode(9,OUTPUT); // S1
+    // Mux output is input for Arduino
+    pinMode(7,INPUT);
+}
+void loop() {
+    // write data inputs to MUX
+    digitalWrite(10,A[index]);
+    digitalWrite(11,B[index]);
+    digitalWrite(12,C[index]);
+    digitalWrite(13,D[index]);
+    // write select line inputs to MUX
+    digitalWrite(8,S0[index]);
+    digitalWrite(9,S1[index]);
+    delay(WAIT0); // give time for logic signal to propagate
+    // read the MUX output
+    x = digitalRead(7);
+    // display the results
+    Serial.print(index);
+    Serial.print(" x:");
+    Serial.print(x,BIN);
+    Serial.print(", y:");
+    Serial.print(Y[index],BIN);
+    Serial.print("\t ");
+    if ( x == Y[index] )
+    {
+    Serial.print(": OK\n");
+    }
+    else
+    {
+    Serial.print(": BAD\n");
+    }
+    delay(WAIT1);
+    index = (index+1) % 8; // increment index
+}
+```
+
+- Lets delve into the logic of our Arduino program. 
+
+- The code runs a series of tests, iterating through different combinations of input values and select lines. It verifies if the output (read by the Arduino) matches the expected output `Y`. The program uses `delay` functions to allow time for the logic signals to propagate and then displays the results on the serial monitor. If the output matches the expected value, it prints "OK"; otherwise, it prints "BAD." 
+
+- The code continuously cycles through the test scenarios in a loop, providing a systematic way to check the multiplexer's correct operation. 
+
+- Additionally, referring to the declaration of the test outputs `Y[]`, we can see that the outputs should be in reversed order compared to the original one which is commented out. We can use the 74150 chip's function table to explain the output being the complement of one of the data inputs. For example, if input to the `E0` pin is 1, then the output when all select input lines are 0 is 0.
+
+#### 2. Integrating the Arduino With Our 4 To 1 MUX
+
+- For consistency, we assigned the following digital pins on the Arduino for specific purposes:
+
+1. Pin 10: Data input A (`E0` on the mux)
+
+2. Pin 11: Data input B (`E1` on the mux)
+
+3. Pin 12: Data input C (`E2` on the mux)
+
+4. Pin 13: Data input D (`E3` on the mux)
+
+5. Pin 8: Select Line 0 (`A` on the mux)
+
+6. Pin 9: Select Line 1 (`B` on the mux)
+
+7. Pin 7: Output data from mux (`W out` on the mux)
+
+- We also have to connect the GND pin adjacent to Pin 13 on the Arduino to the ground on the breadboard. This ensures a common ground reference. It's important to note that we won't use the +5V/GND pins on the power side to power up the Arduino, as it will remain connected to the laptop via the USB cable throughout the experiment.
+
+- Once we see the Serial Monitor of 
+
+- Below is the wiring circuit when connected to the Arduino: 
+
+<img src="./assets/4-to-1_mux_arduino.png" alt="logic diagram of 2 to 1 mux"  />
+
+### Adder Circuit
+
+#### 
+
 
 ## Testing
 

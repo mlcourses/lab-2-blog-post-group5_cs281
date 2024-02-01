@@ -102,6 +102,11 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 <img src="./assets/2-to-1_mux_4.png" alt="logic diagram of 2 to 1 mux"  />
 
+- All scenarios of inputs are demonstrated in the video below:
+
+https://github.com/mlcourses/lab-2-blog-post-group5_cs281/assets/87928752/f667ae9e-6803-4f84-8650-148d0b3a9a38
+
+
 ### BUILDING A 4 TO 1 MUX
 
 #### 1. Getting To Know The 74150 Chip
@@ -137,6 +142,10 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 #### 3. Testing
 
 During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
+
+
+https://github.com/mlcourses/lab-2-blog-post-group5_cs281/assets/87928752/23f0f77e-daa6-49a6-a763-b6ba11e96249
+
 
 
 ### AUTOMATE TESTING FOR A 4 TO 1 MUX WITH ARDUINO

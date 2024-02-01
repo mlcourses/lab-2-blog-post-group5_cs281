@@ -82,6 +82,22 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - Relating to the logic outline of the mux, we use our PB-503 breadboard's S5 and S6 logical switches as our 2 data input lines, representing A and B while the 7404 NOT gate IC takes switch S1 as our select line. 
 
+### TESTING
+
+- Now we can observe the behaviors of our 2 to 1 multiplexer. We noticed that if the selector `S` switch is off or of low voltage (0), the output would be input A and if the output was on or high (1) the output would be B. This is exactly right if we refer to the boolean expression of our 2 to 1 mux (above). 
+
+- **Scenario 1**: Selector line is low &#8594; the output is of low voltage. (Correct)
+
+<img src="./assets/2-to-1_mux_2.png" alt="logic diagram of 2 to 1 mux"  />
+
+- **Scenario 2**: Selector line is high and input A is high &#8594; the output is of low voltage. (Correct)
+
+<img src="./assets/2-to-1_mux_3.png" alt="logic diagram of 2 to 1 mux"  />
+
+- **Scenario 3**: Selector line is high and the two inputs A and B are both high voltage &#8594; the output is of high voltage. (Correct)
+
+<img src="./assets/2-to-1_mux_4.png" alt="logic diagram of 2 to 1 mux"  />
+
 ### BUILDING A 4 TO 1 MUX
 
 #### 1. Getting To Know The 74150 Chip
@@ -249,10 +265,11 @@ void loop() {
 - See testing part for different outputs corresponding to each diffrent inputs.
 
 
-
 ## Testing
 
-During the first demo we tested our 2 to 1 multiplexer. We noticed that if the selector (s) was off or low(0), the ouout would be input A and if the output was on or high(1) the output would be B. Since this is a 2 to 1 mux there were on the options of A or B. (A if S = 0 or B if s = 1).
+### 1. 2 To 1 MUX
+
+Firstly, we are testing the behavior of our 2 to 1 multiplexer. We noticed that if the selector (s) was off or low(0), the ouput would be input A and if the output was on or high(1) the output would be B. Since this is a 2 to 1 mux there were on the options of A or B. (A if S = 0 or B if s = 1).
 
 During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
 

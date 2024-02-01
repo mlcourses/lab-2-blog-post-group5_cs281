@@ -212,7 +212,7 @@ void loop() {
 
 - We also have to connect the GND pin adjacent to Pin 13 on the Arduino to the ground on the breadboard. This ensures a common ground reference. It's important to note that we won't use the +5V/GND pins on the power side to power up the Arduino, as it will remain connected to the laptop via the USB cable throughout the experiment.
 
-- Once we see the Serial Monitor of 
+- Once we verify and compile the program, we can proceed to open the Serial Monitor of the Arduino IDE. If it prints out lines `OK` instead of `BAD`, then we can be sure that the circuit is behaving correctly with the outputs matching our expectation. 
 
 - Below is the wiring circuit when connected to the Arduino: 
 
@@ -220,7 +220,34 @@ void loop() {
 
 ### Adder Circuit
 
-#### 
+#### 1. Understand the Adder Circuit:
+
+- In binary arithmetic, each column functions as a "one-bit adder." Consider two binary numbers, A and B, with respective bits Ai and Bi. The addition process introduces a third input, cin, signifying a carry-over from the preceding column. Consequently, two outputs emerge – the sum bit, Si, and the carry-out bit, cout, potentially influencing the subsequent column in the sequence.
+
+#### 2. Implementing the Adder Circuit:
+
+- To implement it, we can follow the steps below:
+
+1. **Truth Table**: Craft a truth table with inputs A, B, and cin, and outputs C and cout. Populate it based on binary addition logic.
+
+2. **Boolean Equations**: Derive boolean equations for both outputs from the truth table using SOP design principle (refer to this [URL](https://faculty.etsu.edu/tarnoff/ntes2150/Ch6_v02.pdf))
+
+3. **Simplify Equations**: If possible, simplify your boolean expressions to enhance clarity. 
+
+<img src="./assets/adder_truth_table.png" />
+
+4. **Wiring Diagram**: Construct a wiring diagram for your adder, reusing gate outputs to optimize the circuit. 
+
+<img src="./assets/adder_outline.png" />
+
+5. **Implement the Circuit**: Based on the wiring diagram constructed, implement the circuit on the PB-503 breadboard. 
+
+- Here is the actual wiring design of the circuit when testing with the 0 + 0 addition operation: 
+
+<img src="./assets/Adder_1.png" />
+
+- See testing part for different outputs corresponding to each diffrent inputs.
+
 
 
 ## Testing

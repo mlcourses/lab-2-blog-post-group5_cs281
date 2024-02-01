@@ -62,6 +62,8 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 ### BUILDING A 2 TO 1 MUX
 
+#### 1. Understanding the Logic of the Mux
+
 - Here is an outline of what a 2 to 1 mux might look like: 
 
 <img src="./assets/2-to-1_outline.png" alt="arduino_kit" height="350" width="600"/>
@@ -74,6 +76,8 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - When S (select line) is low (off), it selects line A for the output Y . When S is high, then the output Y copies input B
 
+#### 2. Wiring the circuit
+
 <img src="./assets/2-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
 
 - Above is the wiring design of our 2 to 1 mux. with the 7408 AND gate IC top left, the 7404 OR gate IC on the bottom and the 7432 OR gate IC on the right. 
@@ -82,7 +86,7 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 
 - Relating to the logic outline of the mux, we use our PB-503 breadboard's S5 and S6 logical switches as our 2 data input lines, representing A and B while the 7404 NOT gate IC takes switch S1 as our select line. 
 
-### TESTING
+#### 3. Testing
 
 - Now we can observe the behaviors of our 2 to 1 multiplexer. We noticed that if the selector `S` switch is off or of low voltage (0), the output would be input A and if the output was on or high (1) the output would be B. This is exactly right if we refer to the boolean expression of our 2 to 1 mux (above). 
 
@@ -129,6 +133,11 @@ In the previous lab, we familiarized ourselves with the PB-503 breadboard protot
 - Here is the actual wiring circuit: 
 
 <img src="./assets/4-to-1_mux_1.png" alt="logic diagram of 2 to 1 mux"  />
+
+#### 3. Testing
+
+During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
+
 
 ### AUTOMATE TESTING FOR A 4 TO 1 MUX WITH ARDUINO
 
@@ -266,10 +275,6 @@ void loop() {
 
 
 ## Testing
-
-### 1. 2 To 1 MUX
-
-Firstly, we are testing the behavior of our 2 to 1 multiplexer. We noticed that if the selector (s) was off or low(0), the ouput would be input A and if the output was on or high(1) the output would be B. Since this is a 2 to 1 mux there were on the options of A or B. (A if S = 0 or B if s = 1).
 
 During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
 

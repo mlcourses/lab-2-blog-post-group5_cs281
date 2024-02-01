@@ -252,6 +252,14 @@ void loop() {
 
 ## Testing
 
+During the first demo we tested our 2 to 1 multiplexer. We noticed that if the selector (s) was off or low(0), the ouout would be input A and if the output was on or high(1) the output would be B. Since this is a 2 to 1 mux there were on the options of A or B. (A if S = 0 or B if s = 1).
+
+During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
+
+During the third demo we used the Arduino rather than manual switches like we did in demo #2. Since we used a 74150 our outputs where reversed, so we had to use Y instead of X. As you can see from the image below, the program printed out "OK" if the expected output x = (Y[index]) passsed the test and "BAD" if it didn't pass the test.
+
+During the fourth demo we tested our Adder circuit. 
+
 ## Conclusion
 
 In wrapping up this lab, we've delved into the intricate world of multiplexers, adder circuits, and digital design. From constructing a 2-to-1 mux with basic gates to utilizing a 74150 chip for a 4-to-1 mux, we've expanded our understanding of these fundamental components. Integrating Arduino into the mix not only showcased practical applications but also emphasized the dynamic nature of digital systems. As we delved into the design and implementation of a 1-bit adder circuit, the lab offered a holistic experience in digital circuitry. The challenges and successes encountered in building, testing, and troubleshooting these circuits provided invaluable insights into the nuances of hardware design. Overall, this lab has laid a solid foundation for comprehending multiplexers, adders, and the broader landscape of digital design in computer systems.

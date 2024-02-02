@@ -141,7 +141,11 @@ https://github.com/mlcourses/lab-2-blog-post-group5_cs281/assets/87928752/f667ae
 
 #### 3. Testing
 
-During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
+- During the second demo we tested our 4 to 1 multiplexer. We noticed that if both of the selectors where low (0), the output would be input A. 
+
+- Regarding the outputs, we can refer to the truth table of the 4 to 1 mux. Basically, the voltage of the selector inputs determines which data input line is chosen to be negated to get the output since each output is the complement of the voltage of its corresponding data input line. (refer to the function table above).
+
+- Below is all the behaviors of our 4 to 1 MUX with all possible inputs:
 
 
 https://github.com/mlcourses/lab-2-blog-post-group5_cs281/assets/87928752/23f0f77e-daa6-49a6-a763-b6ba11e96249
@@ -248,15 +252,19 @@ void loop() {
 
 - Once we verify and compile the program, we can proceed to open the Serial Monitor of the Arduino IDE. If it prints out lines `OK` instead of `BAD`, then we can be sure that the circuit is behaving correctly with the outputs matching our expectation. 
 
-- Below is the wiring circuit when connected to the Arduino: 
+- Below is the circuit's wiring design:
 
 <img src="./assets/4-to-1_mux_arduino.png" alt="logic diagram of 2 to 1 mux"  />
+
+- To make sure our code is right, we have to refer to the Arduino IDE's Serial Monitor that shows that if the program printed out "OK" when the expected output x = (Y[index]) then the tests have been passed and "BAD" if it didn't pass the test.
 
 ### Adder Circuit
 
 #### 1. Understand the Adder Circuit:
 
-- In binary arithmetic, each column functions as a "one-bit adder." Consider two binary numbers, A and B, with respective bits Ai and Bi. The addition process introduces a third input, cin, signifying a carry-over from the preceding column. Consequently, two outputs emerge – the sum bit, Si, and the carry-out bit, cout, potentially influencing the subsequent column in the sequence.
+- In binary arithmetic, each column functions as a "one-bit adder." Consider two binary numbers, A and B, with respective bits Ai and Bi. The addition process introduces a third input, cin, signifying a carry-over from the preceding column. Consequently, two outputs emerge – the sum bit, Si, and the carry-out bit, cout, potentially influencing the subsequent column in the sequence. The example below gives us a comprehensive view of all the adder's operations performing:
+
+<img src="./assets/adder.png" />
 
 #### 2. Implementing the Adder Circuit:
 
@@ -283,13 +291,38 @@ void loop() {
 - See testing part for different outputs corresponding to each diffrent inputs.
 
 
-## Testing
+#### 3. Testing
 
-During the second demo we tested our 4 to 1 multiplexer. As the title suggest there are 4 inputs: A,B,C,D and 2 selectors: S0 and S1.We noticed that if both of the selectors where low(0), the output would be input A. If S0 was high(1) and S1 was low(0), the output would be input B. if S0 was low(0) and S1 was high(1), the output would be input C. Finally, if both S0 and S1 where high(1), the out put would be input D.
+- For this last section of the lab, we are testing the adder with different variations of input of 0s and 1s. 
 
-During the third demo we used the Arduino rather than manual switches like we did in demo #2. Since we used a 74150 our outputs where reversed, so we had to use Y instead of X. As you can see from the image below, the program printed out "OK" if the expected output x = (Y[index]) passsed the test and "BAD" if it didn't pass the test.
+- **Scenario 1**: 0 + 0 = 0 (Carry 0) &#8594; C = 0 and Cout = 0
 
-During the fourth demo we tested our Adder circuit. 
+<img src="./assets/Adder_1.png" />
+
+- **Scenario 2**: 1 + 0 = 1 (Carry 0) &#8594; C = 1 and Cout = 0
+
+<img src="./assets/Adder_2.png" />
+
+- **Scenario 3**: 1 + 1 = 0 (Carry 1) &#8594; C = 0 and Cout = 1
+
+<img src="./assets/Adder_3.png" />
+
+- **Scenario 4**: (Cin = 1) 1 + 1 = 1 (Carry 1) &#8594; C = 1 and Cout = 1
+
+<img src="./assets/Adder_4.png" />
+
+- **Scenario 5**: (Cin = 1) 1 + 0 = 0 (Carry 1) &#8594; C = 0 and Cout = 1
+
+<img src="./assets/Adder_5.png" />
+
+- **Scenario 6**: (Cin = 1) 0 + 0 = 1 (Carry 0) &#8594; C = 1 and Cout = 0
+
+<img src="./assets/Adder_8.png" />
+
+- **Scenario 7**: (Cin = 1) 0 + 1 = 0 (Carry 1) &#8594; C = 0 and Cout = 1
+
+<img src="./assets/Adder_9.png" />
+
 
 ## Conclusion
 
